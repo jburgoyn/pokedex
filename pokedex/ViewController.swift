@@ -100,8 +100,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+    // this is the code that executes whenever an item is tapped in the collection view.
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        let poke: Pokemon!
+        
+        if inSearchMode {
+            
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            
+            poke = pokemon[indexPath.row]
+        }
+        
+        // perform the segue with the segue id we declared, and we are sending the poke variable.
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -160,6 +173,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collection.reloadData()
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // this is the function to prepare for a segue. 
+        if segue.identifier == "PokemonDetailVC" {
+            
+            // get the destination view controller ready
+            if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
+                
+                // tell the destination VC what the sender is going to be typed as
+                if let poke = sender as? Pokemon {
+                    
+                    // Declaring what the actual variable in the destination VC is equal to from the origin VC.
+                    detailsVC.pokemon = poke
+                }
+            }
+        }
     }
 }
 
