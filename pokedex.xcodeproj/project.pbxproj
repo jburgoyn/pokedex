@@ -16,6 +16,8 @@
 		F94062AD1C25147200DB8536 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94062AC1C25147200DB8536 /* Pokemon.swift */; };
 		F94062B21C251D2D00DB8536 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94062B11C251D2D00DB8536 /* PokeCell.swift */; };
 		F94062B41C2531EC00DB8536 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94062B31C2531EC00DB8536 /* csv.swift */; };
+		F9E301E21C2655BA00B363AD /* pokemonfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E301E11C2655BA00B363AD /* pokemonfont.ttf */; };
+		F9E301E41C265AC900B363AD /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9E301E31C265AC900B363AD /* music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F94062AC1C25147200DB8536 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		F94062B11C251D2D00DB8536 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		F94062B31C2531EC00DB8536 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		F9E301E11C2655BA00B363AD /* pokemonfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemonfont.ttf; sourceTree = "<group>"; };
+		F9E301E31C265AC900B363AD /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,9 @@
 		F94062B71C25323F00DB8536 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F9E301E11C2655BA00B363AD /* pokemonfont.ttf */,
 				F94062A91C25133E00DB8536 /* pokemon.csv */,
+				F9E301E31C265AC900B363AD /* music.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F94062A21C250FA300DB8536 /* LaunchScreen.storyboard in Resources */,
+				F9E301E21C2655BA00B363AD /* pokemonfont.ttf in Resources */,
+				F9E301E41C265AC900B363AD /* music.mp3 in Resources */,
 				F940629F1C250FA300DB8536 /* Assets.xcassets in Resources */,
 				F94062AA1C25133E00DB8536 /* pokemon.csv in Resources */,
 				F940629D1C250FA300DB8536 /* Main.storyboard in Resources */,
@@ -340,6 +348,7 @@
 				F94062A81C250FA300DB8536 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
