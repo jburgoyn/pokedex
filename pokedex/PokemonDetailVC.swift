@@ -31,6 +31,13 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
         
         nameLbl.text = pokemon.name.capitalizedString
+        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
+        
+        pokemon.downloadPokemonDetails { () -> () in
+            // this will be called after download is done. We can't try to assign veriables immediately upon viewdidload because the data wont be there until the download is complete.
+            
+        }
+        
         
     }
 
@@ -40,7 +47,7 @@ class PokemonDetailVC: UIViewController {
     }
 
     @IBAction func bacBtnPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
