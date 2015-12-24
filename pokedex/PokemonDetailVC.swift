@@ -30,14 +30,43 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let img = UIImage(named: "\(pokemon.pokedexId)")
+        
         nameLbl.text = pokemon.name.capitalizedString
-        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
+        mainImg.image = img
+        currentEvoImg.image = img
         
         pokemon.downloadPokemonDetails { () -> () in
             // this will be called after download is done. We can't try to assign veriables immediately upon viewdidload because the data wont be there until the download is complete.
+        
+        self.updateUI()
             
         }
         
+    }
+    
+    func updateUI() {
+        descriptionLbl.text = pokemon.description
+        typeLbl.text = pokemon.type
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        pokedexLbl.text = "\(pokemon.pokedexId)"
+        weightLbl.text = pokemon.weight
+        baseAttackLbl.text = pokemon.attack
+        
+        if pokemon.nextEvolutionId == "" {
+            evoLbl.text = "No Evolutions"
+            nextEvoImg.hidden = true
+        } else {
+            nextEvoImg.hidden = false
+            nextEvoImg.image = UIImage(named: pokemon.nextEvolutionId)
+            var str = "Next Evolution: \(pokemon.nextEvolutionTxt)"
+            
+            if pokemon.nextEvolutionLevel != "" {
+                str += " - LVL \(pokemon.nextEvolutionLevel)"
+            }
+            
+        }
         
     }
 
